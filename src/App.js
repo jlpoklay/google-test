@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Hub, Auth } from 'aws-amplify';
-import { Loader } from 'skylight-react';
 import './App.css';
-import 'skylight-react/dist/skylight.css';
 import Landing from './modules/Landing.js';
-import UserHome from './modules/UserHome';
+import UserHome from './modules/UserHome.js';
 function App() {
 // init state to store user and show loader 
 const [user, setUser] = useState(null);
@@ -36,7 +34,6 @@ getUser();
 }, []);
 
 // show loading screen while fetching, otherwise return page
-if(loading) return <Loader/>
 return (
 <div className="App">
   {user
